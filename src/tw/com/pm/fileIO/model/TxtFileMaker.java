@@ -29,15 +29,15 @@ public class TxtFileMaker implements IFileOutput<String> {
 			writer.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 			return false;
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
+	
 			e.printStackTrace();
 			return false;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 			return false;
 		}

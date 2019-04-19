@@ -28,10 +28,10 @@ public class MyRootElement {
 				res += field.getName() + ":\n" + field.get(this);
 			}
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
+	
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
+	
 			e.printStackTrace();
 		}
 
