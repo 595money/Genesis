@@ -12,7 +12,6 @@ import java.security.Security;
 import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -21,9 +20,8 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+//import sun.misc.BASE64Decoder;
+//import sun.misc.BASE64Encoder;
 
 
 /**
@@ -165,7 +163,8 @@ public class CommonEncrypter {
             // Encrypt
             byte[] enc = ecipher.doFinal(utf8);
             // Encode bytes to base64 to get a string
-            return new BASE64Encoder().encode(enc);
+//            return new BASE64Encoder().encode(enc);
+            return "";
         } catch (BadPaddingException e) {
 
         } catch (IllegalBlockSizeException e) {
@@ -192,7 +191,8 @@ public class CommonEncrypter {
         try {
             // Decode base64 to get bytes
         	//GaiaLog.error(this.getClass(), "str :"+str);
-            byte[] dec = new BASE64Decoder().decodeBuffer(str);
+            byte[] dec = {1};
+            
             //GaiaLog.error(this.getClass(), "dec :"+dec);
             if(dec==null){
             

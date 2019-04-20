@@ -11,7 +11,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -142,7 +141,9 @@ public class ComEncrypt {
             // Encrypt
             byte[] enc = ecipher.doFinal(utf8);
             // Encode bytes to base64 to get a string
-            return new sun.misc.BASE64Encoder().encode(enc);
+//            return new sun.misc.BASE64Encoder().encode(enc);
+
+            return "";
         } catch (BadPaddingException e) {
         	e.printStackTrace();
         } catch (IllegalBlockSizeException e) {
@@ -163,7 +164,9 @@ public class ComEncrypt {
     public String decrypt(String str) {
         try {
             // Decode base64 to get bytes
-            byte[] dec = new sun.misc.BASE64Decoder().decodeBuffer(str);
+//            byte[] dec = new sun.misc.BASE64Decoder().decodeBuffer(str);
+
+          byte[] dec = {1};
             // Decrypt
             byte[] utf8 = dcipher.doFinal(dec);
             // Decode using utf-8
